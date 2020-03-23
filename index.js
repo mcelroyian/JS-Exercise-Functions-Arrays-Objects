@@ -95,9 +95,16 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
+function makePersonObject(myid, myname, myemail) {
+  const myobj = {
+    id: myid,
+    name: myname,
+    email: myemail,
+  }
+  return myobj;
   /* code here */
 }
+
 
 /**
  * ### Challenge `getName`
@@ -112,8 +119,8 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(myobj) {
+  return "Hello, my name is " + myobj.name;
 }
 
 
@@ -132,8 +139,12 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex(myArray) {
+  for (i = 0; i < myArray.length - 1; i++){
+    if (myArray[i] === 'apple') {
+      return i;
+    }
+  }
 }
 
 /**
@@ -151,8 +162,16 @@ function appleIndex(/* code here */) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(myArray) {
+  let ans = [];
+  for (i=0; i < myArray.length; i++){
+    if (myArray[i] === "apple") {
+      ans.push(true);
+    } else {
+      ans.push(false);
+    }
+  } //loop ends here
+  return ans;
 }
 
 
